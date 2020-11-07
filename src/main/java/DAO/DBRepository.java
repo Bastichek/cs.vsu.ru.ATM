@@ -6,11 +6,8 @@ import Domain.User;
 import UI.RepositoryException;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.*;
 import java.util.*;
 
@@ -29,13 +26,9 @@ public class DBRepository implements Repository {
 
     public DBRepository() throws NoSuchMethodException, IllegalAccessException, InstantiationException, SQLException, InvocationTargetException, ClassNotFoundException, IOException {
 
-        Properties props = new Properties();
-        try(InputStream in = Files.newInputStream(Paths.get("src/main/database.properties"))){
-            props.load(in);
-        }
-        String url = props.getProperty("url");
-        String username = props.getProperty("username");
-        String password = props.getProperty("password");
+        String url = "jdbc:mysql://localhost/atm?serverTimezone=Europe/Moscow&useSSL=false&allowPublicKeyRetrieval=true&allowMultiQueries=TRUE";
+        String username = "root";
+        String password = "12345";
 
         connection = DriverManager.getConnection(url, username, password);
         statement = connection.createStatement();
