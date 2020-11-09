@@ -8,7 +8,7 @@ public class RequestHistory implements Operation {
     }
     @Override
     public String toString() {
-        return "RequestHistory";
+        return "RequestHistory ";
     }
 
     public void execute() {

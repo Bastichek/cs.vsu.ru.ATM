@@ -11,6 +11,6 @@ public class LoginUser implements Operation {
 
     @Override
     public String toString() {
-        return "LoginUser";
+        return "LoginUser ";
     }
 }

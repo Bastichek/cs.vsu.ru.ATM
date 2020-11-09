@@ -13,6 +13,6 @@ public class RequestInfoAboutAccounts implements Operation {
 
     @Override
     public String toString() {
-        return "RequestInfoAboutAccounts";
+        return "RequestInfoAboutAccounts ";
     }
 }
